@@ -1,0 +1,121 @@
+/* #main_right{
+  margin: 0px;
+} */
+#chatPanel{
+  padding-bottom:15px; 
+}
+.messagePanel { 
+	height:500px; 
+	width:250px; 
+	border:1px solid; 
+	border-radius:0px; 
+	/* padding:10px;  */
+	overflow-y: auto; 
+	overflow-x: hidden; 
+	text-align:left;
+	font-family: "Verdana";
+	font-size:12px;
+}
+#socket-des{
+  width: 250px;
+  float: left;
+  text-align: left;
+  margin-top: 5px;
+  padding-left: 5px;
+}
+#socket-users{
+  margin-top: 5px;
+  padding-top: 3px;
+  color: lightgray;
+  font-weight: bold;
+}
+#userNameInput{
+  width: 250px;
+}
+.userPanel { 
+	border: 1px solid; 
+	width:100px; 
+	padding: 10px;
+	overflow-y: auto; 
+	overflow-x: hidden; 
+	font-family: "Verdana";
+  font-size:12px;	
+  background-color:rgb(240, 243, 249);;
+}
+.msgInput { 
+  width:250px;
+  height:70px;
+	margin:2px;
+	border: 1px solid;
+	font-family: "Verdana";
+	font-size:12px;
+}
+.wordwrap { 
+   white-space: pre-wrap;      /* CSS3 */   
+   white-space: -moz-pre-wrap; /* Firefox */    
+   white-space: -pre-wrap;     /* Opera <7 */   
+   white-space: -o-pre-wrap;   /* Opera 7 */    
+   word-wrap: break-word;      /* IE */
+}
+.ui-widget-header{
+  /* background:  rgba(80,202,247,1); */
+  background: rgb(93, 50, 110);
+  color: white;
+  border: 0px;
+}
+.ui-dialog{
+  padding: 0px;
+}
+
+.rounded {
+
+  border: 1px solid #ccc;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 2px 2px 3px #666;
+  -webkit-box-shadow: 2px 2px 3px #666;
+  box-shadow: 2px 2px 3px #666;
+  font-size: 12px;
+  padding: 4px 7px;
+  outline: 0;
+  -webkit-appearance: none; 
+}
+
+.rounded:focus {
+  border-color: #339933;
+}
+
+.no-close .ui-dialog-titlebar-close {display: none }
+
+
+/* --------------챗방------------------- */
+/* 
+.chatin_toggle{
+  height: 20px;
+  background-color: tomato
+} */
+#chat_in_sup{
+  color: red;
+}
+.chatPanel_in{
+  padding: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  
+}
+.userPanel_in{
+  background-color: whitesmoke;
+}
+.chatin_des{
+  padding: 0px;
+}
+
+.messagePanel_in{ 
+  height:813px; 
+  padding-bottom: 0px;
+}
+
+.msgInput_in{
+  height: 100px;
+}

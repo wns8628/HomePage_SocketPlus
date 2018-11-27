@@ -1,0 +1,44 @@
+<!-- <h4 class="socket-title"> ● 실시간 채팅방 <span class="socketon"><sup>(●on)</sup></span></h4> -->
+
+<div id="chatPanel" class="col-sm-12"  title="Blog socket++">
+       <script type="text/javascript" src="/javascripts/util/stringUtils.js"></script>
+       <script type="text/javascript" src="/javascripts/SocketClient.js"></script>
+       <script type="text/javascript" src="/javascripts/ui/ChatController.js"></script>
+       <script type="text/javascript" src="/javascripts/ui/panels.js"></script>
+       <script type="text/javascript" src="/javascripts/ui/events.js"></script>
+
+       <script>
+         $(document).ready(function() {
+           //buildPanels();
+           bindKeyboardEvents();
+         });
+       </script>
+    
+       <link type="text/css" href="/stylesheets/custom-theme/jquery-ui-1.8.23.custom.css" rel="stylesheet" />
+       <link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
+    
+       
+       <div align="center">
+
+       <div id="" >
+        <h4 class="socket-title"> ● 실시간 채팅방 <span class="socketon"><sup>(●on)</sup></span></h4>
+        <div id="loginPanel">
+                <input id="userNameInput" type="text" maxlength="12" class="rounded" placeholder="닉네임을 입력하세요" autofocus="true"/>
+                <button id="socket-btn"class="btn btn-primary">접속하기</button>
+              </div>
+         <div>
+           <table border="0">
+             <tr>
+               <div id="socket-des"></div>
+               <td align="top">
+                 <div id="messages" class="messagePanel wordwrap rounded"></div>
+                 <input id="msgInput" class="msgInput rounded" type="text"/>
+               </td>
+               <div id="socket-users">접속자</div>
+               <td valign="top" id="users" class="userPanel rounded"></td>
+             </tr>
+           </table>
+         </div>
+       </div>
+     </div>
+</div>

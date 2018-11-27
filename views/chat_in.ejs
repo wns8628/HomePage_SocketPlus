@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<% include ./partials/head %>
+ 
+<title>Node.js WebSocket Chat</title>
+<script type="text/javascript" src="/javascripts/lib/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="/javascripts/lib/jquery-ui-1.8.23.custom.min.js"></script>
+<script type="text/javascript" src="/javascripts/util/stringUtils.js"></script>
+<script type="text/javascript" src="/javascripts/SocketClient.js"></script>
+<script type="text/javascript" src="/javascripts/ui/ChatController.js"></script>
+<script type="text/javascript" src="/javascripts/ui/panels.js"></script>
+<script type="text/javascript" src="/javascripts/ui/events.js"></script>
+<script>
+	$(document).ready(function() {
+		// buildPanels();
+		bindKeyboardEvents();
+	});
+</script>
+<link type="text/css" href="/stylesheets/custom-theme/jquery-ui-1.8.23.custom.css" rel="stylesheet" />
+<link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
+</head>
+<body class="body">
+<% include ./partials/nav %>
+
+<div class="container row mx-auto mid_fix_body post post-new">
+
+	
+	<div class="col-sm-3 ac_parent">
+		
+		<div class="about_col">
+				
+			<!-- <div id="paper"  class="col-sm-12">
+				<h2>채팅방 ●</h2>
+			</div> -->
+			<div id="loginPanel_in" title="Login">
+				<center>
+				<br><br>
+				<h1 id="chat_in_title">채팅방<sup id="chat_in_sup">●</sup></h1>
+				<p>닉네임을 입력하고 채팅을 시작하세요!</p>	
+				<input id="userNameInput_in" type="text" maxlength="12" class="rounded" placeholder="닉네임 입력" autofocus="true"/><br/><br/>
+				<button id="socket-btn"class="btn btn-primary">접속하기</button>
+				</center>
+			</div>
+		</div>
+	</div>		
+
+	
+	<div class="col-sm-9 sb_parent container">
+	  <div class="showBody_chat">
+		<div class="btn btn-danger col-12" id="chatin_toggle"></div>
+		<div id="chatPanel" class="container row col-sm-12 chatPanel_in" style="padding-bottom: 0px;">
+				<div align="top" class="col-9 chatin_des">
+					<div id="messages" class="messagePanel_in wordwrap rounded"></div>
+				</div>
+				<div class="col-3">
+					<center>
+					<div><h5>접속자</h5></div>
+					</center>
+					<div valign="top" id="users" class="userPanel_in rounded"></div>
+				</div>
+				<input id="msgInput" class="msgInput_in rounded col-sm-12 fixed-bottom" placeholder="메세지를 입력하세요" type="text"/>
+		</div>
+	  </div>
+	</div>
+
+</div>
+
+<footer>
+  <% include ./partials/footer %>
+</footer>
+</body>
+</html>

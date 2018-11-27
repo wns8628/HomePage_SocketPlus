@@ -1,0 +1,77 @@
+<!-- nav  -->
+
+<!-- views/partials/nav.ejs -->
+<div id="brick" class=""></div>
+<div id="brick" class="fixed-top"></div>
+<nav id="nav" class="navbar navbar-expand-lg fixed-top navbar-dark container">
+  <a href="/"><div class="navbar-brand">Blog socket++</div></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!-- </div> -->
+  <div class="collapse navbar-collapse" id="myNavbar">
+   <ul class="navbar-nav mr-auto myNavbar">
+    <li class="nav-item"><a  class="nav-link" href="/about">About</a></li>
+    <li class="nav-item dropdown dropdown_Post_nav">
+      <a class="nav-link dropdown-toggle" href="/posts" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        게시판
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item" href="/posts?group=">전체글보기</a>
+        <a class="dropdown-item" href="/posts?group=1">공지사항</a>
+        <a class="dropdown-item" href="/posts?group=2">커뮤니티</a>
+        <a class="dropdown-item" href="/posts?group=3">질문과 답변</a>
+      </div>
+    </li>
+
+    <li class="nav-item"><a href="/chat"><button id="chat_btn_in" class="btn btn-danger">채팅방<sup>Go!</sup></button></a></li>
+    <li class="nav-item"><button id="chat_btn" class="btn btn-success">실시간채팅 <sup>click!</sup></button></li>
+    
+  </ul>
+  
+   <ul class="navbar-nav navbar-right myNavbar2">
+    <li class="nav-item"><a class="nav-link" href="/users">회원목록</a></li>
+      <% if(isAuthenticated){ %>
+    <li class="nav-item"><a class="nav-link" href="/users/<%= currentUser.username %>">내 정보( <%= currentUser.name%> )</a></li>
+    <li class="nav-item"><a class="nav-link" href="/logout">로그아웃</a></li>
+      <% } else { %>
+    <li class="nav-item"><a class="nav-link" href="/users/new">회원가입</a></li>
+    <li class="nav-item"><a class="nav-link" href="/login">로그인</a></li>
+      <% } %>
+   </ul>
+  </div>
+</nav>
+<a href="/chat"><button id="chat_btn_in_m" class="btn btn-danger">채팅방<sup>Go!</sup></button></a>    
+<button id="chat_btn_m" class="btn btn-success">실시간채팅 <sup>click!</sup></button>
+
+
+<!-- 소켓 -->
+<script>    
+    $(function(){
+        $("#chatPanel").dialog({
+            autoOpen:false, //자동으로 열리지않게
+            position:[70,160], //x,y  값을 지정
+            width: 380,		
+            //"center", "left", "right", "top", "bottom"
+            resizable:false, //크기 조절 못하게
+            
+            buttons:{
+              "취소":function(){
+                    $(this).dialog("close");
+                }
+            }
+        });
+   
+       //창 열기 버튼을 클릭했을경우
+        $("#chat_btn, #chat_btn_m").on("click",function(){
+            $("#chatPanel").dialog("open"); //다이얼로그창 오픈
+            $("#userNameInput").focus();        
+            $("#userNameInput_in").focus();                
+        });
+    });
+</script>
+
+<% include ./socket  %>
+<!-- 소켓끝 -->
+
+<!-- button에 data-target이 #myNavbar로 설정되어 있고, 이 버튼을 누를때마다 <div class="collapse navbar-collapse" id="myNavbar">가 보이거나 숨겨지게 됩니다. -->
