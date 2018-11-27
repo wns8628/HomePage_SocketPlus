@@ -1,4 +1,4 @@
-var wssUrl = "ws://http:3030//blogsocket.herokuapp.com";
+var wssUrl = "ws://localhost:3030";
 var socket;
 
 var cmd = {
