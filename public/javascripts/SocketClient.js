@@ -1,4 +1,4 @@
-var wssUrl = "ws://localhost:8080";
+var wssUrl = "ws://localhost:3030";
 var socket;
 
 var cmd = {
