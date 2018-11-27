@@ -8,7 +8,7 @@ var chat = {
 		wss.on('connection', function(ws) {
 			//console.log(ws);
 			ws.on('message', function(message) {
-				console.log('received: %s', message);
+				// console.log('received: %s', message);
 				chat.dispatch(ws, message);
 			});
 			
@@ -23,7 +23,7 @@ var chat = {
 		for(i = 0; i < chat.clients.length; i++){
 			if(chat.clients[i].socket === ws){
 				chat.clients.splice(i,1);
-				console.log('remove client');
+				// console.log('remove client');
 			}
 		}
 	},
@@ -44,7 +44,7 @@ var chat = {
 		for(i = 0; i < chat.clients.length; i++){
 			userList.push(chat.clients[i].name);
 		}
-		console.log(userList.concat());
+		// console.log(userList.concat());
 		chat.broadcastCommand('/updateUserList '+userList.concat());
 	},
 	
@@ -54,7 +54,7 @@ var chat = {
 				chat.clients[i].socket.send(cmd);
 			} catch(error){
 				chat.clients.splice(i,1);
-				console.log(error);
+				// console.log(error);
 			}
 			
 		}
