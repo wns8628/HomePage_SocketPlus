@@ -3,8 +3,10 @@ var ChatController = {
 	connect: function(){
 		var user = $("#userNameInput, #userNameInput_in").val();
 
-		if(user != ''){
-			$('#loginPanel').dialog('close');
+		if($("#username_chat").attr('value')){
+			SocketClient.init($("#username_chat").attr('value'));
+		}else if(user != ''){
+			// $('#loginPanel').dialog('close');
 			$('#chatPanel').dialog('open');
 			$("#msgInput").focus();
 			SocketClient.init(user);
@@ -18,7 +20,7 @@ var ChatController = {
 	
 	disconnect: function (){
 		SocketClient.close();
-		this.resetUI();
+		// this.resetUI();
 	},
 	
 	resetUI: function (){

@@ -9,14 +9,13 @@ var cookieParser = require("cookie-parser"); //방문자카운터위해 쿠키�
 var Counter = require("./models/Counter"); //디비를왜 여기서가져오냐? 모든페이지에 보여줄 디비는 여기서 가져온다 알겠니
 var app = express();
 
-
 //소켓+
 // var logger = require('morgan');
 var indexRouter = require('./routes/chat_in');
 var usersRouter = require('./routes/user_soc');
 
 //디비세팅
-mongoose.connect(process.env.V_MONGO_LAST, {useNewUrlParser : true});
+mongoose.connect(process.env.NETWORK_PRO, {useNewUrlParser : true});
 mongoose.set('useCreateIndex', true);
 var db = mongoose.connection;
 db.once("open",function(){

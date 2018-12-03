@@ -19,7 +19,13 @@ var SocketClient = {
 			socket.onopen = function(){
 				socket.send(cmd.connect + 'onRead');
 			};	
-		}else{
+		}
+		else if($("#username_chat").attr('value')){
+			socket.onopen = function(){
+				socket.send(cmd.connect + $("#username_chat").attr('value')); //로그인정보가져오기
+			}			
+		}
+		else{
 			socket.onopen = function(){
 				socket.send(cmd.connect + user);
 			};	
@@ -41,7 +47,5 @@ var SocketClient = {
 	
 	close: function(){
 		socket.close();
-	}
-	
-	
+	}		
 };

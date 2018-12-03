@@ -60,7 +60,6 @@ util.noPermission = function(req, res){
 }
 
 
-
 //제목 본문검색과 게시판나누기 위해
 util.createSearch = function(queries){
 
